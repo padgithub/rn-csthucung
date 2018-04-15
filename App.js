@@ -1,21 +1,11 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { Component } from 'react';
+import { AppRegistry } from 'react-native';
+import Main from './src/Main';
 
-export default class App extends React.Component {
+export default class MyApp extends Component {
   render() {
-    return (
-      <View style={styles.container}>
-        <Text>Hello World cc</Text>
-      </View>
-    );
+    return <Main />;
   }
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+AppRegistry.registerComponent('MyApp', () => MyApp);
