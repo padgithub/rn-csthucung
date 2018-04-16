@@ -6,8 +6,8 @@ import { DrawerNavigator, DrawerItems } from 'react-navigation';
 import Components from './View/Drawer/components';
 import Ratings from './View/Drawer/ratings';
 import Pricing from './View/Drawer/pricing';
-//import Login from './View/Drawer/login';
-//import Profile from './View/Drawer/profile';
+import Login from './View/Drawer/login';
+import Profile from './View/Drawer/profile';
 //import Lists from './View/Drawer/lists';
 
 const SCREEN_WIDTH = Dimensions.get('window').width;
@@ -35,14 +35,14 @@ const MainRoot = DrawerNavigator(
       path: '/components',
       screen: Components,
     },
-    // Login: {
-    //   path: '/login',
-    //   screen: Login
-    // },
-    // Profile: {
-    //   path: '/profile',
-    //   screen: Profile
-    // },
+    Login: {
+      path: '/login',
+      screen: Login
+    },
+    Profile: {
+      path: '/profile',
+      screen: Profile
+    },
     // Lists: {
     //   path: '/lists',
     //   screen: Lists
