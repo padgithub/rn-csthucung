@@ -8,7 +8,7 @@ const KhacDrawerItem = StackNavigator({
   Playground: { screen: Khac }
   },
   {
-    headerMode: 'none'
+    headerMode: 'float'
   }
 );
 
@@ -26,6 +26,16 @@ KhacDrawerItem.navigationOptions = {
       color={tintColor}
     />
   ),
+  title: 'Của Hàng Yêu Thích',
+    headerLeft: (
+      <Icon
+        name="menu"
+        size={30}
+        type="entypo"
+        style={{ paddingLeft: 10 }}
+        onPress={() => navigation.navigate('DrawerOpen')}
+      />
+    ),
 };
 
 export default KhacDrawerItem;
