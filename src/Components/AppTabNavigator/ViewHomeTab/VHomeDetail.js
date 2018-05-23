@@ -20,9 +20,7 @@ class LikesTab extends Component {
     render() {
         return (
             <View style={styles.container}>
-                <Text>LikesTab</Text>
-                <Text> con cac </Text>
-                
+                <Text>HomeDetail</Text>        
             </View>
         );
     }

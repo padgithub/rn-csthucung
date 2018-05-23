@@ -5,7 +5,7 @@ import {
     StyleSheet
 } from "react-native";
 
-import { Icon } from 'native-base'
+import { Icon,Container,Header,Item,Input,Button } from 'native-base'
 
 class SearchTab extends Component {
 
@@ -18,11 +18,19 @@ class SearchTab extends Component {
 
     render() {
         return (
-            <View style={styles.container}>
-                <Text>SearchTab</Text>
-            </View>
+          <Container>
+            <Header searchBar rounded>
+              <Item>
+                <Icon name="ios-search" />
+                <Input placeholder="Search" />
+              </Item>
+              <Button transparent>
+              <Icon name="ios-search" />
+              </Button>
+            </Header>
+          </Container>
         );
-    }
+      }
 }
 export default SearchTab;
 

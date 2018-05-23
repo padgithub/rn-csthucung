@@ -1,3 +1,4 @@
+
 import React, { Component } from "react";
 import {
     View,
@@ -11,18 +12,13 @@ import { Icon } from 'native-base'
 class LikesTab extends Component {
 
     static navigationOptions = {
-
-        tabBarIcon: ({ tintColor }) => (
-            <Icon name="ios-heart" style={{ color: tintColor }} />
-        )
+        title: 'Edits Profile'  
     }
 
     render() {
         return (
             <View style={styles.container}>
-                <Text>LikesTab</Text>
-                <Text> con cac </Text>
-                
+                <Text>editprofile</Text>
             </View>
         );
     }

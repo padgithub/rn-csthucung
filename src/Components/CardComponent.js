@@ -14,9 +14,9 @@ class CardComponent extends Component {
 
         const images = {
 
-            "1": require('../../assets/feed_images/1.jpg'),
-            "2": require('../../assets/feed_images/2.jpg'),
-            "3": require('../../assets/feed_images/3.png')
+            "1": require('../images/alasca1.jpg'),
+            "2": require('../images/alasca2.jpg'),
+            "3": require('../images/alasca3.jpg'),
         }
 
         return (
@@ -25,8 +25,12 @@ class CardComponent extends Component {
                     <Left>
                         <Thumbnail source={require('../../assets/me.jpg')} />
                         <Body>
-                            <Text>Varun </Text>
+                            <Text style={{ 
+                                fontWeight: "900",
+                                fontSize: 15
+                                }}>Nunu Na Na </Text>
                             <Text note>Jan 15, 2018</Text>
+                            <Text note>vừa xong</Text>
                         </Body>
                     </Left>
                 </CardItem>
@@ -41,22 +45,24 @@ class CardComponent extends Component {
                         <Button transparent>
                             <Icon name="ios-chatbubbles-outline" style={{ color: 'black' }} />
                         </Button>
-                        <Button transparent>
+                        
+                    </Left>
+                    <Right>
+                    <Button transparent>
                             <Icon name="ios-send-outline" style={{ color: 'black' }} />
                         </Button>
-
-
-                    </Left>
+                        </Right>
                 </CardItem>
 
-                <CardItem style={{ height: 20 }}>
-                    <Text>{this.props.likes} likes</Text>
+                <CardItem style={{ height: 10 }}>
+                    <Text style={{color: 'black'}} >{this.props.likes} likes</Text>
+                    <Text style={{color: 'black'}} >{this.props.comments} comments </Text>
                 </CardItem>
                 <CardItem>
                     <Body>
                         <Text>
                             <Text style={{ fontWeight: "900" }}>varun </Text>
-                            Ea do Lorem occaecat laborum do. Minim ullamco ipsum minim eiusmod dolore cupidatat magna exercitation amet proident qui. Est do irure magna dolor adipisicing do quis labore excepteur. Commodo veniam dolore cupidatat nulla consectetur do nostrud ea cupidatat ullamco labore. Consequat ullamco nulla ullamco minim.
+                            ahihi, Do ngoc
                         </Text>
                     </Body>
                 </CardItem>
