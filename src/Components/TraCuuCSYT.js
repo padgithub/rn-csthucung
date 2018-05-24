@@ -14,7 +14,7 @@ const TCCSYTDrawerItem = StackNavigator({
 );
 
 TCCSYTDrawerItem.navigationOptions = {
-  drawerLabel: 'Tra Cứu CSYT',
+  drawerLabel: 'Tra Cứu CSTY',
   drawerIcon: ({ tintColor }) => (
     <Icon
       name="local-hospital"
