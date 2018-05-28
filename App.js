@@ -3,7 +3,7 @@ import React from 'react';
 import { View, Image, Dimensions,AppRegistry,Text } from 'react-native';
 import { StackNavigator } from 'react-navigation';
 
-import Login from "./src/login";
+import Login from "./src/login.js";
 import DrawNavi from "./src/DrawNavi";
 
 const Main = StackNavigator(
@@ -18,7 +18,7 @@ const Main = StackNavigator(
     }
   },
   {
-    initialRouteName: 'DrawNavis',
+    initialRouteName: 'Logins',
     navigationOptions: {
       header: null
     }
