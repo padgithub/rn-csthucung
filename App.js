@@ -83,5 +83,12 @@ const MainRoot = DrawerNavigator(
     drawerToggleRoute: 'DrawerToggle',
   }
 );
+export default class App extends React.Component {
+  render() {
+    return (
+      <MainRoot/>
+    );
+  }
 
-Expo.registerRootComponent(MainRoot);
+}
+
