@@ -1,3 +1,4 @@
+
 import React, { Component } from "react";
 import {
     View,
@@ -7,24 +8,23 @@ import {
 
 import { Icon } from 'native-base'
 
-class AddMediaTab extends Component {
+
+class LikesTab extends Component {
 
     static navigationOptions = {
-
-        tabBarIcon: ({ tintColor }) => (
-            <Icon name="ios-add-circle" style={{ color: tintColor }} />
-        )
+        title: 'Edits Profile'  
     }
 
     render() {
         return (
             <View style={styles.container}>
-                <Text>AddMediaTab</Text>
+                <Text>editprofile</Text>
             </View>
         );
     }
 }
-export default AddMediaTab;
+
+export default LikesTab;
 
 const styles = StyleSheet.create({
     container: {

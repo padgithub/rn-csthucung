@@ -8,21 +8,21 @@ import {
     FlatList
 } from "react-native";
 
-import { Container, Content, Header,Icon, Left, Body, Right, Segment, Button } from 'native-base'
+import { Container, Content, Header,Icon, Left, Body, Right, Segment, Button,Card,CardItem } from 'native-base'
 import EntypoIcon from 'react-native-vector-icons/Entypo';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons'
 var { height, width } = Dimensions.get('window');
 
-import CardComponent from '../../CardComponent'
+import CardComponent from '../CardComponent'
 
 var images = [
-    require('../../../images/alasca1.jpg'),
-    require('../../../images/alasca2.jpg'),
-    require('../../../images/alasca3.jpg'),
-    require('../../../images/alasca4.jpg'),
-    require('../../../images/alasca5.jpg'),
-    require('../../../images/alasca6.jpg'),
-    require('../../../images/alasca7.jpg')
+    require('../../images/alasca1.jpg'),
+    require('../../images/alasca2.jpg'),
+    require('../../images/alasca3.jpg'),
+    require('../../images/alasca4.jpg'),
+    require('../../images/alasca5.jpg'),
+    require('../../images/alasca6.jpg'),
+    require('../../images/alasca7.jpg')
 ]
 
 class ProfileTab extends Component {
@@ -96,7 +96,38 @@ class ProfileTab extends Component {
 
     //infomation dog
     renderSectionFort() {
-
+        return (
+            <Card>
+            <CardItem header bordered>
+              <Text>My Luuu</Text>
+            </CardItem>
+            <CardItem bordered>
+              <Body>
+                <Text>
+                  Can Nang
+                </Text>
+                <Text>
+                  23
+                </Text>
+                <Text> Update: 9/5/2018 </Text>
+              </Body>
+            </CardItem>
+            <CardItem bordered>
+              <Body>
+              <Text>
+                  Tình trạng sức khoẻ
+                </Text>
+                <Text>
+                  An Ngu Tot
+                </Text>
+                <Text> Update: 8/5/2018 </Text>
+              </Body>
+            </CardItem>
+            <CardItem footer bordered>
+              <Text>GeekyAnts</Text>
+            </CardItem>
+          </Card>
+        )
     }
 
     renderSection() {
@@ -114,19 +145,68 @@ class ProfileTab extends Component {
         else if (this.state.activeIndex == 1) {
             return (
                 <View>
-                    <CardComponent imageSource="1" likes="101" />
-                    <CardComponent imageSource="2" likes="101" />
-                    <CardComponent imageSource="3" likes="101" />
+                    <CardComponent names = "Anh Dũng" dates = "Jan 25 2018" times = "vừa xong" imageSource="1" likes="101" comments="123" newnamecomment = "Mmimi" newcomment = "ahihi. Đồ chó"/>
+                    <CardComponent names = "Anh Dũng" dates = "Jan 25 2018" times = "1 phút trước" imageSource="2" likes="101" comments="123" newnamecomment = "Keu Mi" newcomment = "ahihi. Đồ heo"/>
+                    <CardComponent names = "Anh Dũng" dates = "Jan 25 2018" times = "5 ngày trước" imageSource="3" likes="151" comments="523" newnamecomment = "Nan Ni" newcomment = "ahihi. Đồ lợn"/>
                 </View>
+            )
+        }
+        else if (this.state.activeIndex == 3) {
+            return (
+                <View>
+                <Card>
+                <CardItem header bordered>
+                  <Text>My Luuu</Text>
+                </CardItem>
+                <CardItem bordered>
+                  <Body>
+                    <Text>
+                      Cân nặng: 23 kg
+                    </Text>
+                    <Text> Update: 9/5/2018 </Text>
+                  </Body>
+                </CardItem>
+                <CardItem bordered>
+                  <Body>
+                  <Text>
+                      Tình trạng sức khoẻ: An Ngu Tot
+                    </Text>
+                    <Text> Update: 8/5/2018 </Text>
+                  </Body>
+                </CardItem>
+              </Card>
+              
+              <Card>
+                <CardItem header bordered>
+                  <Text>Anchi</Text>
+                </CardItem>
+                <CardItem bordered>
+                  <Body>
+                    <Text>
+                      Cân nặng: 13 kg
+                    </Text>
+                    <Text> Update: 10/5/2018 </Text>
+                  </Body>
+                </CardItem>
+                <CardItem bordered>
+                  <Body>
+                  <Text>
+                      Tình trạng sức khoẻ: Ăn nhiều mới bị ốm
+                    </Text>
+                    <Text> Update: 7/5/2018 </Text>
+                  </Body>
+                </CardItem>
+              </Card>
+              </View>
             )
         }
     }
 
     _showEditsProfile = () => {
-        this.props.navigation.navigate('Edits');
+        this.props.navigation.navigate('EditsProfile');
       };
       _showSettings = () => {
-        this.props.navigation.navigate('Settings');
+        this.props.navigation.navigate('SettingProfile');
       };
 
     componentDidMount() {
@@ -155,7 +235,7 @@ class ProfileTab extends Component {
                             {/**User photo takes 1/3rd of view horizontally **/}
                             <View
                                 style={{ flex: 1, alignItems: 'center', justifyContent: 'flex-start' }}>
-                                <Image source={require('../../../../assets/me.jpg')}
+                                <Image source={require('../../../assets/me.jpg')}
                                     style={{ width: 75, height: 75, borderRadius: 37.5 }} />
 
                             </View>
@@ -216,7 +296,6 @@ class ProfileTab extends Component {
                             <View style={{ paddingHorizontal: 10 }}>
                                 <Text style={{ fontWeight: 'bold' }}>Varun Nath</Text>
                                 <Text>Lark | Computer Jock | Commercial Pilot</Text>
-                                <Text>www.unsureprogrammer.com</Text>
                             </View>
                         </View>
 

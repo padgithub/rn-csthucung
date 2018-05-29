@@ -23,10 +23,10 @@ class SearchTab extends Component {
     }
 
     static navigationOptions = {
-
         tabBarIcon: ({ tintColor }) => (
             <Icon name="ios-search" style={{ color: tintColor }} />
-        )
+        ),
+        header: null
     }
 
     render() {
@@ -40,7 +40,7 @@ class SearchTab extends Component {
               <Form>
             <Picker
               mode="dropdown"
-              iosHeader="Select your SIM"
+              iosHeader="Chọn loại tìm kiếm"
               iosIcon={<Icon name="ios-arrow-down-outline" />}
               style={{ width: undefined }}
               selectedValue={this.state.selected}
@@ -52,6 +52,7 @@ class SearchTab extends Component {
             </Picker>
           </Form>
             </Header>
+
           </Container>
         );
       }

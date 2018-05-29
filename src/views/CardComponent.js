@@ -19,6 +19,8 @@ class CardComponent extends Component {
             "3": require('../images/alasca3.jpg'),
         }
 
+        const navigate = this.props.navigation;
+
         return (
             <Card>
                 <CardItem>
@@ -28,9 +30,9 @@ class CardComponent extends Component {
                             <Text style={{ 
                                 fontWeight: "900",
                                 fontSize: 15
-                                }}>Nunu Na Na </Text>
-                            <Text note>Jan 15, 2018</Text>
-                            <Text note>vừa xong</Text>
+                                }}>{this.props.names} </Text>
+                            <Text note>{this.props.dates}</Text>
+                            <Text note>{this.props.times}</Text>
                         </Body>
                     </Left>
                 </CardItem>
@@ -42,7 +44,8 @@ class CardComponent extends Component {
                         <Button transparent>
                             <Icon name="ios-heart-outline" style={{ color: 'black' }} />
                         </Button>
-                        <Button transparent>
+                        <Button
+                            transparent>
                             <Icon name="ios-chatbubbles-outline" style={{ color: 'black' }} />
                         </Button>
                         <Button transparent>
@@ -58,13 +61,14 @@ class CardComponent extends Component {
 
                 <CardItem style={{ height: 10 }}>
                     <Text style={{color: 'black'}} >{this.props.likes} likes</Text>
+                    <Text> | </Text>
                     <Text style={{color: 'black'}} >{this.props.comments} comments </Text>
                 </CardItem>
                 <CardItem>
                     <Body>
                         <Text>
-                            <Text style={{ fontWeight: "900" }}>varun </Text>
-                            ahihi, Do ngoc
+                            <Text style={{ fontWeight: "900"}}>{this.props.newnamecomment} </Text>
+                            {this.props.newcomment}
                         </Text>
                     </Body>
                 </CardItem>

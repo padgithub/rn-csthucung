@@ -20,7 +20,7 @@ export default class ListAvatarExample extends Component {
           <List>
             <ListItem avatar>
               <Left>
-                <Thumbnail source={require('../../../assets/StoriesHeaderThumbnails/1.jpg')} />
+                <Thumbnail source={require('../../assets/StoriesHeaderThumbnails/1.jpg')} />
               </Left>
               <Body>
                 <Text>Kumar Pratik</Text>
@@ -32,7 +32,7 @@ export default class ListAvatarExample extends Component {
             </ListItem>
             <ListItem avatar>
               <Left>
-                <Thumbnail source={require('../../../assets/StoriesHeaderThumbnails/1.jpg')} />
+                <Thumbnail source={require('../../assets/StoriesHeaderThumbnails/1.jpg')} />
               </Left>
               <Body>
                 <Text>Kumar Pratik</Text>
@@ -44,7 +44,7 @@ export default class ListAvatarExample extends Component {
             </ListItem>
             <ListItem avatar>
               <Left>
-                <Thumbnail source={require('../../../assets/StoriesHeaderThumbnails/2.jpg')} />
+                <Thumbnail source={require('../../assets/StoriesHeaderThumbnails/2.jpg')} />
               </Left>
               <Body>
                 <Text>Oader Lot</Text>
@@ -56,7 +56,7 @@ export default class ListAvatarExample extends Component {
             </ListItem>
             <ListItem avatar>
               <Left>
-                <Thumbnail source={require('../../../assets/StoriesHeaderThumbnails/3.jpg')} />
+                <Thumbnail source={require('../../assets/StoriesHeaderThumbnails/3.jpg')} />
               </Left>
               <Body>
                 <Text>Adam Muiu</Text>

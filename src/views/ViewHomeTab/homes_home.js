@@ -7,7 +7,7 @@ import {
 } from "react-native";
 
 import { Container, Content, Icon, Thumbnail, Header, Left, Right, Body } from 'native-base'
-import CardComponent from '../../CardComponent'
+import CardComponent from '../CardComponent'
 
 class HomeTab extends Component {
 
@@ -22,11 +22,6 @@ class HomeTab extends Component {
     render() {
         return (
             <Container style={styles.container}>
-                <Header>
-                    <Left><Icon name="ios-camera-outline" style={{ paddingLeft: 10 }} /></Left>
-                    <Body><Text style={{ fontSize: 20 }}>Pets Newfeed</Text></Body>
-                    <Right><Icon style={{ paddingRight: 10 }} name="ios-send-outline" /></Right>
-                </Header>
                 <Content>
 
                     <View style={{ height: 100 }}>
@@ -42,42 +37,41 @@ class HomeTab extends Component {
                             <ScrollView
                                 horizontal={true}
                                 showsHorizontalScrollIndicator={false}
-                                contentContainerStyle={{
+                                contentContainerStyle = {{
                                     alignItems: 'center',
                                     paddingStart: 5,
                                     paddingEnd: 5
-                                }}
-
+                            }}
                             >
                                 <Thumbnail
                                     style={{ marginHorizontal: 5, borderColor: 'pink', borderWidth: 2 }}
-                                    source={require('../../../../assets/StoriesHeaderThumbnails/1.jpg')} />
+                                    source={require('../../../assets/StoriesHeaderThumbnails/1.jpg')} />
                                 <Thumbnail
                                     style={{ marginHorizontal: 5, borderColor: 'pink', borderWidth: 2 }}
-                                    source={require('../../../../assets/StoriesHeaderThumbnails/2.jpg')} />
+                                    source={require('../../../assets/StoriesHeaderThumbnails/2.jpg')} />
                                 <Thumbnail
                                     style={{ marginHorizontal: 5, borderColor: 'pink', borderWidth: 2 }}
-                                    source={require('../../../../assets/StoriesHeaderThumbnails/3.jpg')} />
+                                    source={require('../../../assets/StoriesHeaderThumbnails/3.jpg')} />
                                 <Thumbnail
                                     style={{ marginHorizontal: 5, borderColor: 'pink', borderWidth: 2 }}
-                                    source={require('../../../../assets/StoriesHeaderThumbnails/4.jpg')} />
+                                    source={require('../../../assets/StoriesHeaderThumbnails/4.jpg')} />
 
                                 <Thumbnail
                                     style={{ marginHorizontal: 5, borderColor: 'pink', borderWidth: 2 }}
-                                    source={require('../../../../assets/StoriesHeaderThumbnails/5.jpg')} />
+                                    source={require('../../../assets/StoriesHeaderThumbnails/5.jpg')} />
                                 <Thumbnail
                                     style={{ marginHorizontal: 5, borderColor: 'pink', borderWidth: 2 }}
-                                    source={require('../../../../assets/StoriesHeaderThumbnails/6.jpg')} />
+                                    source={require('../../../assets/StoriesHeaderThumbnails/6.jpg')} />
                                 <Thumbnail
                                     style={{ marginHorizontal: 5, borderColor: 'pink', borderWidth: 2 }}
-                                    source={require('../../../../assets/StoriesHeaderThumbnails/7.jpg')} />
+                                    source={require('../../../assets/StoriesHeaderThumbnails/7.jpg')} />
 
                             </ScrollView>
                         </View>
                     </View>
-                    <CardComponent imageSource="1" likes="101" comments="123" />
-                    <CardComponent imageSource="2" likes="201" comments="123"/>
-                    <CardComponent imageSource="3" likes="301" comments="123"/>
+                    <CardComponent names = "Anh Dũng" dates = "Jan 25 2018" times = "vừa xong" imageSource="1" likes="101" comments="123" newnamecomment = "Mmimi" newcomment = "ahihi. Đồ chó"/>
+                    <CardComponent names = "Anh Dũng" dates = "Jan 25 2018" times = "1 phút trước" imageSource="2" likes="101" comments="123" newnamecomment = "Keu Mi" newcomment = "ahihi. Đồ heo"/>
+                    <CardComponent names = "Anh Dũng" dates = "Jan 25 2018" times = "5 ngày trước" imageSource="3" likes="151" comments="523" newnamecomment = "Nan Ni" newcomment = "ahihi. Đồ lợn"/>
                 </Content>
             </Container>
         );
@@ -91,3 +85,6 @@ const styles = StyleSheet.create({
         backgroundColor: 'white'
     }
 });
+
+
+

@@ -1,16 +1,16 @@
 import Expo from 'expo';
 import React from 'react';
-import { View, Image, Dimensions,AppRegistry,Text } from 'react-native';
+import { View, Image, Dimensions } from 'react-native';
 import { DrawerNavigator, DrawerItems } from 'react-navigation';
 
-import MainScreen from "./Components/MainScreen";
-import TraCuuCSYT from "./Components/TraCuuCSYT";
-import KhoeAnh from "./Components/KhoeAnh";
-import ChiaSeKinhNghiem from "./Components/ChiaSeKinhNghiem";
-import HoiDap from "./Components/HoiDap";
-import MuaBan from "./Components/MuaBan";
-import Khac from "./Components/Khac"
-
+import Components from './src/drawer/components';
+import Logins from './src/drawer/login';
+import TraCuuCSTY from './src/drawer/TraCuuCSYT'
+import KhoeAnh from './src/drawer/KhoeAnh'
+import HoiDap from './src/drawer/HoiDap'
+import ChiaSeKinhNghiem from './src/drawer/ChiaSeKinhNghiem'
+import MuaBan from './src/drawer/MuaBan'
+import Khac from './src/drawer/Khac'
 const SCREEN_WIDTH = Dimensions.get('window').width;
 
 const CustomDrawerContentComponent = props => (
@@ -19,7 +19,7 @@ const CustomDrawerContentComponent = props => (
       style={{ marginTop: 40, justifyContent: 'center', alignItems: 'center' }}
     >
       <Image
-        source={require('../assets/logo.png')}
+        source={require('./src/images/logo1.png')}
         style={{ width: SCREEN_WIDTH * 0.57 }}
         resizeMode="contain"
       />
@@ -30,41 +30,42 @@ const CustomDrawerContentComponent = props => (
   </View>
 );
 
-
 const MainRoot = DrawerNavigator(
   {
-    MainScreen: {
-      path: '/mainscreen',
-      screen: MainScreen,
+    Component: {
+      path: '/components',
+      screen: Components,
     },
-      TraCuuCSYT: {
-      path: '/tracuucsyt',
-      screen: TraCuuCSYT
+    TraCuuCSTY: {
+      path: '/login',
+      screen: TraCuuCSTY
     },
     KhoeAnh: {
-      path: '/khoeanh',
+      path: '/login',
       screen: KhoeAnh
     },
-    ChiaSeKinhNghiem: {
-      path: '/chiasekinhnghiem',
-      screen: ChiaSeKinhNghiem
-    },
-    
     HoiDap: {
-      path: '/hoidap',
-      screen: HoiDap,
+      path: '/login',
+      screen: HoiDap
+    },
+    ChiaSeKinhNghiem: {
+      path: '/login',
+      screen: ChiaSeKinhNghiem
     },
     MuaBan: {
       path: '/muaban',
-      screen: MuaBan,
+      screen: MuaBan
     },
     Khac: {
-      path: '/khac',
-      screen: Khac,
+      path: 'khac',
+      screen: Khac
+    },
+    Login: {
+      screen: Logins
     }
   },
   {
-    initialRouteName: 'MainScreen',
+    initialRouteName: 'Component',
     contentOptions: {
       activeTintColor: '#548ff7',
       activeBackgroundColor: 'transparent',
@@ -83,12 +84,4 @@ const MainRoot = DrawerNavigator(
   }
 );
 
-export default class App extends React.Component {
-  render() {
-    return (
-      <MainRoot />
-    );
-  }
-
-}
-
+Expo.registerRootComponent(MainRoot);
