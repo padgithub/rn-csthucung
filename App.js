@@ -1,94 +1,44 @@
 import Expo from 'expo';
-import React from 'react';
-import { View, Image, Dimensions } from 'react-native';
-import { DrawerNavigator, DrawerItems } from 'react-navigation';
+import React, { Component } from 'react';
+import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 
-import Components from './src/drawer/components';
-import Logins from './src/drawer/login';
-import TraCuuCSTY from './src/drawer/TraCuuCSYT'
-import KhoeAnh from './src/drawer/KhoeAnh'
-import HoiDap from './src/drawer/HoiDap'
-import ChiaSeKinhNghiem from './src/drawer/ChiaSeKinhNghiem'
-import MuaBan from './src/drawer/MuaBan'
-import Khac from './src/drawer/Khac'
-const SCREEN_WIDTH = Dimensions.get('window').width;
+import { StackNavigator } from 'react-navigation';
+import { Icon } from 'react-native-elements';
 
-const CustomDrawerContentComponent = props => (
-  <View style={{ flex: 1, backgroundColor: '#43484d' }}>
-    <View
-      style={{ marginTop: 40, justifyContent: 'center', alignItems: 'center' }}
-    >
-      <Image
-        source={require('./src/images/logo1.png')}
-        style={{ width: SCREEN_WIDTH * 0.57 }}
-        resizeMode="contain"
-      />
-    </View>
-    <View style={{marginLeft: 10}}>
-      <DrawerItems {...props} />
-    </View>
-  </View>
+import Login from './src/login';
+import DrawNavi from './src/DrawNavi';
+//import AddMedia from '../view/ViewHomeTab/AddMedia'
+
+const DraweNaviView = ({ navigation }) => (
+  <DrawNavi navigation={navigation} />
 );
 
-const MainRoot = DrawerNavigator(
-  {
-    Component: {
-      path: '/components',
-      screen: Components,
+const LoginView = ({ navigation }) => (
+  <Login navigation={navigation}/>
+);
+
+const MainLy = StackNavigator({
+  DrawNavis: {
+    screen: DraweNaviView,
+    path: '/drawnavi',
+    navigationOptions: ({ navigation }) => ({
+      header: null,
+    }),
     },
-    TraCuuCSTY: {
-      path: '/login',
-      screen: TraCuuCSTY
-    },
-    KhoeAnh: {
-      path: '/login',
-      screen: KhoeAnh
-    },
-    HoiDap: {
-      path: '/login',
-      screen: HoiDap
-    },
-    ChiaSeKinhNghiem: {
-      path: '/login',
-      screen: ChiaSeKinhNghiem
-    },
-    MuaBan: {
-      path: '/muaban',
-      screen: MuaBan
-    },
-    Khac: {
-      path: 'khac',
-      screen: Khac
-    },
-    Login: {
-      screen: Logins
-    }
+    Logins: {
+    screen: LoginView,
+    path: '/login',
   },
-  {
-    initialRouteName: 'Component',
-    contentOptions: {
-      activeTintColor: '#548ff7',
-      activeBackgroundColor: 'transparent',
-      inactiveTintColor: '#ffffff',
-      inactiveBackgroundColor: 'transparent',
-      labelStyle: {
-        fontSize: 15,
-        marginLeft: 0,
-      },
-    },
-    drawerWidth: SCREEN_WIDTH * 0.8,
-    contentComponent: CustomDrawerContentComponent,
-    drawerOpenRoute: 'DrawerOpen',
-    drawerCloseRoute: 'DrawerClose',
-    drawerToggleRoute: 'DrawerToggle',
-  }
-);
+},
+{
+  initialRouteName: 'DrawNavis',
+});
+
 export default class App extends React.Component {
   render() {
     return (
-      <MainRoot/>
+      <MainLy/>
     );
   }
 
 }
-

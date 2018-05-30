@@ -37,7 +37,7 @@ TabSelector.propTypes = {
   selected: PropTypes.bool.isRequired,
 };
 
-export default class LoginScreen2 extends Component {
+export default class LoginScreen2 extends React.Component {
 
   constructor(props) {
     super(props);
@@ -142,10 +142,10 @@ export default class LoginScreen2 extends Component {
               <KeyboardAvoidingView contentContainerStyle={styles.loginContainer} behavior='position'>
                 <View style={styles.titleContainer}>
                   <View style={{flexDirection: 'row'}}>
-                    <Text style={styles.titleText}>Pets</Text>
+                    <Text style={styles.titleText}>BEAUX</Text>
                   </View>
                   <View style={{marginTop: -10, marginLeft: 10}}>
-                    <Text style={styles.titleText}>Thú Cưng</Text>
+                    <Text style={styles.titleText}>VOYAGES</Text>
                   </View>
                 </View>
                 <View style={{flexDirection: 'row'}}>
@@ -190,7 +190,7 @@ export default class LoginScreen2 extends Component {
                     keyboardType='email-address'
                     returnKeyType='next'
                     inputStyle={{marginLeft: 10}}
-                    placeholder={'User'}
+                    placeholder={'Email'}
                     containerStyle={{borderBottomColor: 'rgba(0, 0, 0, 0.38)'}}
                     ref={input => this.emailInput = input}
                     onSubmitEditing={() => this.passwordInput.focus()}
