@@ -1,25 +1,25 @@
 import Expo from 'expo';
 import React from 'react';
 import { View, Image, Dimensions } from 'react-native';
-import { DrawerNavigator, DrawerItems } from 'react-navigation';
+import { DrawerNavigator, DrawerItems,SwitchNavigator } from 'react-navigation';
 
-import Components from './drawer/components';
-import Logins from './login';
-import TraCuuCSTY from './drawer/TraCuuCSYT'
-import KhoeAnh from './drawer/KhoeAnh'
-import HoiDap from './drawer/HoiDap'
-import ChiaSeKinhNghiem from './drawer/ChiaSeKinhNghiem'
-import MuaBan from './drawer/MuaBan'
-import Khac from './drawer/Khac'
+import Components from './src/drawer/components';
+import Logins from './src/drawer/login';
+import TraCuuCSTY from './src/drawer/TraCuuCSYT'
+import KhoeAnh from './src/drawer/KhoeAnh'
+import HoiDap from './src/drawer/HoiDap'
+import ChiaSeKinhNghiem from './src/drawer/ChiaSeKinhNghiem'
+import MuaBan from './src/drawer/MuaBan'
+import Khac from './src/drawer/Khac'
 const SCREEN_WIDTH = Dimensions.get('window').width;
 
 const CustomDrawerContentComponent = props => (
-  <View style={{ flex: 1, backgroundColor: '#43484d' }}>
+  <View style={{ flex: 1, backgroundColor: '#E0EEEE' }}>
     <View
       style={{ marginTop: 40, justifyContent: 'center', alignItems: 'center' }}
     >
       <Image
-        source={require('./images/logo1.png')}
+        source={require('./src/images/logo1.png')}
         style={{ width: SCREEN_WIDTH * 0.57 }}
         resizeMode="contain"
       />
@@ -61,7 +61,7 @@ const MainRoot = DrawerNavigator(
       screen: Khac
     },
     Login: {
-      screen: Logins
+      screen: Logins,
     }
   },
   {
@@ -83,12 +83,18 @@ const MainRoot = DrawerNavigator(
     drawerToggleRoute: 'DrawerToggle',
   }
 );
-export default class App extends React.Component {
-  render() {
-    return (
-      <MainRoot/>
-    );
+
+const AppSwitch = SwitchNavigator({
+  Main: {
+      screen: MainRoot,
+      drawerLockMode: 'unlocked',
+  },
+  Logins:{
+    screen: Logins,
+    drawerLockMode: 'locked-open',
   }
-
-}
-
+},
+{
+  initialRouteName: 'Logins'
+})
+Expo.registerRootComponent(AppSwitch);

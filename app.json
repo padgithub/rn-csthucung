@@ -1,18 +1,17 @@
 {
   "expo": {
-    "name": "rn-csthucung",
-    "description": "This project is really great.",
-    "slug": "rn-csthucung",
+    "name": "PetsEvery",
+    "description": "App ho tro cham soc thu cung",
+    "slug": "react-native-pets",
     "privacy": "public",
-    "sdkVersion": "26.0.0",
-    "platforms": ["ios", "android"],
+    "sdkVersion": "23.0.0",
     "version": "1.0.0",
     "orientation": "portrait",
+    "primaryColor": "#cccccc",
     "icon": "./assets/icons/icon1.png",
-    "splash": {
-      "image": "./assets/icons/loading.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+    "loading": {
+      "icon": "./assets/icons/loading.png",
+      "hideExponentText": false
     },
     "packagerOpts": {
       "assetExts": [
@@ -21,12 +20,6 @@
       ],
       "config": "rn-cli.config.js"
     },
-    "updates": {
-      "fallbackToCacheTimeout": 0
-    },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
     "ios": {
       "supportsTablet": true
     }

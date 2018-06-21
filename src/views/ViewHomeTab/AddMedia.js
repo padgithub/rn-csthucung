@@ -9,7 +9,7 @@ import {
 import { Icon } from 'native-base'
 
 
-class LikesTab extends Component {
+class AddMedia extends Component {
 
     static navigationOptions = {
         title: 'Edits Profile'  
@@ -18,13 +18,13 @@ class LikesTab extends Component {
     render() {
         return (
             <View style={styles.container}>
-                <Text>editprofile</Text>
+                <Text>add media</Text>
             </View>
         );
     }
 }
 
-export default LikesTab;
+export default AddMedia;
 
 const styles = StyleSheet.create({
     container: {

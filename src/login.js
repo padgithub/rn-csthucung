@@ -37,7 +37,7 @@ TabSelector.propTypes = {
   selected: PropTypes.bool.isRequired,
 };
 
-export default class LoginScreen2 extends React.Component {
+export default class LoginScreen2 extends Component {
 
   constructor(props) {
     super(props);
@@ -81,22 +81,24 @@ export default class LoginScreen2 extends React.Component {
 
     return re.test(email);
   }
-
+  
   login() {
-    const {
-      email,
-      password,
-    } = this.state;
-    this.setState({ isLoading: true });
-    // Simulate an API call
-    setTimeout(() => {
-      LayoutAnimation.easeInEaseOut();
-      this.setState({
-        isLoading: false,
-        isEmailValid: this.validateEmail(email) || this.emailInput.shake(),
-        isPasswordValid: password.length >= 8 || this.passwordInput.shake(),
-      });
-    }, 1500);
+    const navigation = this.props.navigation
+    // const {
+    //   email,
+    //   password,
+    // } = this.state;
+    // this.setState({ isLoading: true });
+    // // Simulate an API call
+    // setTimeout(() => {
+    //   LayoutAnimation.easeInEaseOut();
+    //   this.setState({
+    //     isLoading: false,
+    //     isEmailValid: this.validateEmail(email) || this.emailInput.shake(),
+    //     isPasswordValid: password.length >= 8 || this.passwordInput.shake(),
+    //   });
+    // }, 1500);
+    this.props.navigation.navigate("Main");
   }
 
   signUp() {
@@ -142,10 +144,10 @@ export default class LoginScreen2 extends React.Component {
               <KeyboardAvoidingView contentContainerStyle={styles.loginContainer} behavior='position'>
                 <View style={styles.titleContainer}>
                   <View style={{flexDirection: 'row'}}>
-                    <Text style={styles.titleText}>BEAUX</Text>
+                    <Text style={styles.titleText}>Pets</Text>
                   </View>
                   <View style={{marginTop: -10, marginLeft: 10}}>
-                    <Text style={styles.titleText}>VOYAGES</Text>
+                    <Text style={styles.titleText}>Thú Cưng</Text>
                   </View>
                 </View>
                 <View style={{flexDirection: 'row'}}>
@@ -190,7 +192,7 @@ export default class LoginScreen2 extends React.Component {
                     keyboardType='email-address'
                     returnKeyType='next'
                     inputStyle={{marginLeft: 10}}
-                    placeholder={'Email'}
+                    placeholder={'User'}
                     containerStyle={{borderBottomColor: 'rgba(0, 0, 0, 0.38)'}}
                     ref={input => this.emailInput = input}
                     onSubmitEditing={() => this.passwordInput.focus()}
