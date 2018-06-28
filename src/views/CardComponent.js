@@ -9,7 +9,7 @@ import {
 import { Card, CardItem, Thumbnail, Body, Left, Right, Button, Icon } from 'native-base'
 
 class CardComponent extends Component {
-
+    
     render() {
 
         const images = {
@@ -18,8 +18,6 @@ class CardComponent extends Component {
             "2": require('../images/alasca2.jpg'),
             "3": require('../images/alasca3.jpg'),
         }
-
-        const navigate = this.props.navigation;
 
         return (
             <Card>
@@ -37,7 +35,7 @@ class CardComponent extends Component {
                     </Left>
                 </CardItem>
                 <CardItem cardBody>
-                    <Image source={images[this.props.imageSource]} style={{ height: 200, width: null, flex: 1 }} />
+                    <Image source={images[this.props.imageSource]} style={{ height: images == "1" ? 0 : 200, width: null, flex: 1 }} />
                 </CardItem>
                 <CardItem style={{ height: 45 }}>
                     <Left>
@@ -45,6 +43,7 @@ class CardComponent extends Component {
                             <Icon name="ios-heart-outline" style={{ color: 'black' }} />
                         </Button>
                         <Button
+                            onPress = {() =>  this.props.navigation.navigate('Main')}
                             transparent>
                             <Icon name="ios-chatbubbles-outline" style={{ color: 'black' }} />
                         </Button>

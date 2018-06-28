@@ -9,24 +9,24 @@ const LoginDrawerItem = StackNavigator({
   Playground: { screen: Login }
   },
   {
-    headerMode: 'none'
+    headerMode: 'none',
   }
 );
-
 LoginDrawerItem.navigationOptions = {
-  drawerLabel: 'Đăng Nhập',
+  drawerLabel: 'Đăng xuất',
   drawerIcon: ({ tintColor }) => (
     <Icon
-      name="email"
+      name="log-out"
       size={30}
       iconStyle={{
         width: 30,
         height: 30
       }}
-      type="material"
+      type="entypo"
       color={tintColor}
     />
   ),
+  //drawerLockMode: 'locked-closed',
 };
 
 export default LoginDrawerItem;

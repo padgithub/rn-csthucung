@@ -1,9 +1,7 @@
-import Expo from 'expo';
 import React, { Component } from 'react';
-import { View, ScrollView, StyleSheet, Platform } from 'react-native';
+import { View, ScrollView, StyleSheet, Platform,Text } from 'react-native';
 
-import { Text, Button, Icon } from 'react-native-elements';
-
+import { Container,Content,List,ListItem,Left,Right,Body,Thumbnail} from 'native-base'
 
 class ButtonsDetail extends Component {
   render() {
@@ -19,7 +17,7 @@ class ButtonsDetail extends Component {
               </Left>
               <Body>
                 <Text>Pratik</Text>
-                <Text note>Chó của bạn dễ thương quoá...</Text>
+                <Text note>Chó của bạn dễ thương quoá... con cc</Text>
               </Body>
               <Right>
                 <Text note>3:43 pm</Text>

@@ -7,6 +7,7 @@ import HomesTab from '../tabs/HomeTab';
 import SearchTab from '../tabs/SearchTab';
 import NoticationTab  from '../tabs/NoticationsTab'
 import ProfileTab from '../tabs/ProfileTab'
+import Shop from '../tabs/Shops'
 
 const Components = TabNavigator(
   {
@@ -33,6 +34,21 @@ const Components = TabNavigator(
         tabBarLabel: 'Tìm kiếm',
         tabBarIcon: ({ tintColor, focused }) => (
           <Icon name="search" size={30} type="font-awesome" color={tintColor} />
+        ),
+      },
+    },
+    ShopTabs: {
+      screen: Shop,
+      path: '/shops',
+      navigationOptions: {
+        tabBarLabel: 'Pets Shop',
+        tabBarIcon: ({ tintColor, focused }) => (
+          <Icon
+            name={focused ? 'baidu' : 'baidu'}
+            size={30}
+            type="entypo"
+            color={tintColor}
+          />
         ),
       },
     },

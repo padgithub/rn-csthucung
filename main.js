@@ -14,7 +14,7 @@ import Khac from './src/drawer/Khac'
 const SCREEN_WIDTH = Dimensions.get('window').width;
 
 const CustomDrawerContentComponent = props => (
-  <View style={{ flex: 1, backgroundColor: '#E0EEEE' }}>
+  <View style={{ flex: 1, backgroundColor: '#FF5162' }}>
     <View
       style={{ marginTop: 40, justifyContent: 'center', alignItems: 'center' }}
     >

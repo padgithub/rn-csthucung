@@ -7,17 +7,19 @@ import { Icon } from 'react-native-elements';
 
 import HomesHome from '../views/ViewHomeTab/homes_home';
 import HomesDetails from '../views/ViewHomeTab/homes_detail';
-//import AddMedia from '../view/ViewHomeTab/AddMedia'
+import AddMedia from '../views/ViewHomeTab/AddMedia'
+
 
 const HomesTabView = ({ navigation }) => (
   <HomesHome navigation={navigation} />
 );
 
 const HomesDetailTabView = ({ navigation }) => (
-  <HomesDetails
-    banner={`${navigation.state.params.name}s Profile`}
-    navigation={navigation}
-  />
+  <HomesDetails navigation={navigation} />
+);
+
+const AddMedias = ({ navigation }) => (
+  <AddMedia navigation={navigation} />
 );
 
 const HomesTab = StackNavigator({
@@ -41,7 +43,7 @@ const HomesTab = StackNavigator({
           size={25}
           type="entypo"
           style={{ paddingRight: 15 }}
-          onPress={() => navigation.navigate('DrawerOpen')}
+          onPress={() => navigation.navigate('Home_Detail')}
         />
       ),
     }),
@@ -51,6 +53,13 @@ const HomesTab = StackNavigator({
     path: '/homes_detail',
     navigationOptions: {
       title: 'Bình luận',
+    },
+  },
+  HomeAddMedia: {
+    screen: AddMedias,
+    path: '/addmedia',
+    navigationOptions: {
+      title: 'Tạo bài viết',
     },
   },
 });
