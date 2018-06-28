@@ -43,7 +43,7 @@ const HomesTab = StackNavigator({
           size={25}
           type="entypo"
           style={{ paddingRight: 15 }}
-          onPress={() => navigation.navigate('Home_Detail')}
+          onPress={() => navigation.navigate('HomeAddMedia')}
         />
       ),
     }),

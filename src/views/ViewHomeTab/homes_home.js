@@ -39,8 +39,8 @@ class HomeTab extends Component {
                                 showsHorizontalScrollIndicator={false}
                                 contentContainerStyle = {{
                                     alignItems: 'center',
-                                    paddingStart: 5,
-                                    paddingEnd: 5
+                                    //paddingStart: 5,
+                                    //paddingEnd: 5
                             }}
                             >
                                 <Thumbnail
