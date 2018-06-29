@@ -7,7 +7,7 @@ import {
 } from "react-native";
 
 import { Container, Content, Icon, Thumbnail, Header, Left, Right, Body } from 'native-base'
-import CardComponent from '../CardComponent'
+import CardComponent from '../CarBaiViet'
 
 class HomeTab extends Component {
 
@@ -39,8 +39,8 @@ class HomeTab extends Component {
                                 showsHorizontalScrollIndicator={false}
                                 contentContainerStyle = {{
                                     alignItems: 'center',
-                                    //paddingStart: 5,
-                                    //paddingEnd: 5
+                                    paddingTop: 5,
+                                    paddingBottom: 5
                             }}
                             >
                                 <Thumbnail

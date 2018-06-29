@@ -10,24 +10,26 @@ import MaterialIcons from 'react-native-vector-icons/MaterialIcons'
 import Profiles from '../views/ViewProfileTab/VProfiles'
 import EditsProfile from '../views/ViewProfileTab/VEditProfile'
 import SettingProfile from '../views/ViewProfileTab/VSettings'
+import ProfilePet from '../views/ViewProfileTab/ProfilePets'
 
-const HomesTabView = ({ navigation }) => (
-  <HomesHome navigation={navigation} />
+const VProfiles = ({ navigation }) => (
+  <Profiles navigation={navigation} />
+);
+const VEditsProfile = ({ navigation }) => (
+  <EditsProfile navigation={navigation} />
+);
+const VSettingProfile = ({ navigation }) => (
+  <SettingProfile navigation={navigation} />
+);
+const VProfilePet = ({ navigation }) => (
+  <ProfilePet navigation={navigation} />
 );
 
-const HomesDetailTabView = ({ navigation }) => (
-  <HomesDetails
-    banner={`${navigation.state.params.name}s adf`}
-    navigation={navigation}
-  />
-);
-
-const HomesTab = StackNavigator({
+const HomeProfiles = StackNavigator({
   Profile: {
     screen: Profiles,
-    path: '/',
+    path: '/vprofiles',
     navigationOptions: ({ navigation }) => ({
-      title: 'Cơm Hộp Online',
       headerLeft: (
         <Icon
           name="menu"
@@ -40,19 +42,26 @@ const HomesTab = StackNavigator({
     }),
   },
   EditsProfile: {
-    screen: EditsProfile,
-    path: '/homes_detail',
+    screen: VEditsProfile,
+    path: '/veditprofile',
     navigationOptions: {
-      title: 'Homes Detail',
+      title: 'Edits Profile',
     },
   },
   SettingProfile: {
-    screen: SettingProfile,
-    path: '/homes_detail',
+    screen: VSettingProfile,
+    path: '/vsetting',
     navigationOptions: {
-      title: 'Homes Detail',
+      title: 'Setting',
+    },
+  },
+  ProfilePets: {
+    screen: VProfilePet,
+    path: '/profilsepet',
+    navigationOptions: {
+      title: 'Pets Profile',
     },
   },
 });
 
-export default HomesTab;
+export default HomeProfiles;

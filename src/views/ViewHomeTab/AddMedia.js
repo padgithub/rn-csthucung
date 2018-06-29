@@ -7,7 +7,7 @@ import {
     Image
 } from "react-native";
 import { ImagePicker } from 'expo';
-import { Icon,Container,Content,Left,Right,Body,Item,Form,Picker,Button,Label,Input,Textarea } from 'native-base'
+import { Icon,Container,Content,Left,Right,Body,Item,Form,Picker,Button,Label,Input,Textarea, Footer } from 'native-base'
 
 class AddMedia extends Component {
     constructor(props) {
@@ -39,6 +39,8 @@ class AddMedia extends Component {
     render() {
         let { image } = this.state;
         return (
+            <Container>
+                <Container>
                 <Content>
                     <Form>
                         <Item floatingLabel>
@@ -77,10 +79,15 @@ class AddMedia extends Component {
                             <Textarea rowSpan={5} bordered placeholder="Nội dung" />
                     </Form>
                     
-                    <Button block light style = {{backgroundColor : "#007aff"}}>
-                        <Text>OK</Text>
-                    </Button>
+                    
                 </Content>
+                </Container>
+                <Footer>
+                <Button block success>
+            <Text>Success</Text>
+          </Button>
+                    </Footer>
+                </Container>
         );
     }
 }

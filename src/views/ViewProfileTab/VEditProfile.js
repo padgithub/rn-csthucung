@@ -1,12 +1,10 @@
 
 import React, { Component } from "react";
 import {
-    View,
-    Text,
     StyleSheet
 } from "react-native";
 
-import { Container, Header, Content, Form, Item, Input, Label, DatePicker } from 'native-base';
+import { Container, Header, Content, Form, Item, Input, Label, DatePicker,Text, Footer,Button } from 'native-base';
 
 class LikesTab extends Component {
 
@@ -25,52 +23,37 @@ class LikesTab extends Component {
 
     render() {
         return (
-            <Container>
-        <Header />
-        <Content>
-          <Form>
-            <Item floatingLabel>
-              <Label>Tên</Label>
-              <Input />
-            </Item>
-            <Item floatingLabel last>
-              <Label>Ngày sinh</Label>
-            <DatePicker
-                defaultDate={new Date(2018, 4, 4)}
-                minimumDate={new Date(2018, 1, 1)}
-                maximumDate={new Date(2018, 12, 31)}
-                locale={"en"}
-                timeZoneOffsetInMinutes={undefined}
-                modalTransparent={false}
-                animationType={"fade"}
-                androidMode={"default"}
-                placeHolderText="Select date"
-                textStyle={{ color: "green" }}
-                placeHolderTextStyle={{ color: "#d3d3d3" }}
-                onDateChange={this.setDate}
-            />
-            <Text>
-              Date: {this.state.chosenDate.toString().substr(4, 12)}
-            </Text>
-            </Item>
-            <Item floatingLabel last>
-              <Label>Password</Label>
-              <Input />
-            </Item>
-            <Item floatingLabel last>
-              <Label>Password</Label>
-              <Input />
-            </Item>
-            <Item floatingLabel last>
-              <Label>Password</Label>
-              <Input />
-            </Item>
-            <Item floatingLabel last>
-              <Label>Password</Label>
-              <Input />
-            </Item>
-          </Form>
-        </Content>
+        <Container>
+            <Content>
+                  <Form>
+                  <Item stackedLabel>
+                    <Label>Tên</Label>
+                    <Input />
+                  </Item>
+                  <Item stackedLabel>
+                    <Label>Ngày sinh</Label>
+                    <Input />
+                  </Item>
+                  <Item stackedLabel>
+                    <Label>Địa chỉ</Label>
+                    <Input />
+                  </Item>
+                  <Item stackedLabel>
+                    <Label>Email</Label>
+                    <Input />
+                  </Item>
+                  <Item stackedLabel>
+                    <Label>Số điện thoại</Label>
+                    <Input />
+                  </Item>
+                </Form>
+                <Footer>
+                <Button block success>
+            <Text>Success</Text>
+          </Button>
+                </Footer>
+            </Content>
+            
       </Container>
         );
     }

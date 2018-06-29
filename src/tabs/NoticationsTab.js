@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Container, Header, Content, List,Icon, ListItem, Left, Body, Right, Thumbnail, Text } from 'native-base';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons'
-
+import CardNotifi from '../views/CardNotification'
 export default class ListAvatarExample extends Component {
     static navigationOptions = {
 
@@ -18,54 +18,11 @@ export default class ListAvatarExample extends Component {
         </Header>
         <Content>
           <List>
-            <ListItem avatar>
-              <Left>
-                <Thumbnail source={require('../../assets/StoriesHeaderThumbnails/1.jpg')} />
-              </Left>
-              <Body>
-                <Text>Kumar Pratik</Text>
-                <Text note>Chó của bạn dễ thương quoá...</Text>
-              </Body>
-              <Right>
-                <Text note>3:43 pm</Text>
-              </Right>
-            </ListItem>
-            <ListItem avatar>
-              <Left>
-                <Thumbnail source={require('../../assets/StoriesHeaderThumbnails/1.jpg')} />
-              </Left>
-              <Body>
-                <Text>Kumar Pratik</Text>
-                <Text note>Nhưng thua con của mình...</Text>
-              </Body>
-              <Right>
-                <Text note>3:43 pm</Text>
-              </Right>
-            </ListItem>
-            <ListItem avatar>
-              <Left>
-                <Thumbnail source={require('../../assets/StoriesHeaderThumbnails/2.jpg')} />
-              </Left>
-              <Body>
-                <Text>Oader Lot</Text>
-                <Text note>Chụp ở đâu vậy</Text>
-              </Body>
-              <Right>
-                <Text note>3:45 pm</Text>
-              </Right>
-            </ListItem>
-            <ListItem avatar>
-              <Left>
-                <Thumbnail source={require('../../assets/StoriesHeaderThumbnails/3.jpg')} />
-              </Left>
-              <Body>
-                <Text>Adam Muiu</Text>
-                <Text note>Ta thấy ta bắt thịt...</Text>
-              </Body>
-              <Right>
-                <Text note>3:50 pm</Text>
-              </Right>
-            </ListItem>
+            <CardNotifi name = "Kulala" comment = "ahihi con bo" time = "8:33 pm" date = "To day"/>
+            <CardNotifi name = "Malana" comment = "ahihi con bo" time = "7:59 pm" date = "To day"/>
+            <CardNotifi name = "Seobu" comment = "ahihi con bo" time = "6:15 pm" date = "To day"/>
+            <CardNotifi name = "Cannana" comment = "hay lam ban oi" time = "5:43 pm" date = "To day"/>
+            <CardNotifi name = "Kaka" comment = "mua o dau vay" time = "4:12 pm" date = "To day"/>
           </List>
         </Content>
       </Container>

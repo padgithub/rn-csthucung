@@ -10,10 +10,13 @@ import {
 
 import { Container, Content, Header,Icon, Left, Body, Right, Segment, Button,Card,CardItem } from 'native-base'
 import EntypoIcon from 'react-native-vector-icons/Entypo';
-import MaterialIcons from 'react-native-vector-icons/MaterialIcons'
+import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
+
+import CardThuCung from '../CardThuCung'
+
 var { height, width } = Dimensions.get('window');
 
-import CardComponent from '../CardComponent'
+import CardComponent from '../CarBaiViet'
 
 var images = [
     require('../../images/alasca1.jpg'),
@@ -28,8 +31,6 @@ var images = [
 class ProfileTab extends Component {
 
     static navigationOptions = {
-
-
         tabBarIcon: ({ tintColor }) => (
             <Icon name="person" style={{ color: tintColor }} />
         ),
@@ -86,47 +87,27 @@ class ProfileTab extends Component {
 
     //List bai viet
     renderSectionTwo() {
-
+        return (
+            <View>
+                <CardComponent names = "Anh Dũng" dates = "Jan 25 2018" times = "vừa xong" imageSource="1" likes="101" comments="123" newnamecomment = "Mmimi" newcomment = "ahihi. Đồ chó"/>
+                <CardComponent names = "Anh Dũng" dates = "Jan 25 2018" times = "1 phút trước" imageSource="2" likes="101" comments="123" newnamecomment = "Keu Mi" newcomment = "ahihi. Đồ heo"/>
+                <CardComponent names = "Anh Dũng" dates = "Jan 25 2018" times = "5 ngày trước" imageSource="3" likes="151" comments="523" newnamecomment = "Nan Ni" newcomment = "ahihi. Đồ lợn"/>
+            </View>
+        )
     }
 
     //List luu tru
     renderSectionThree() {
-
+        
     }
 
     //infomation dog
     renderSectionFort() {
         return (
-            <Card>
-            <CardItem header bordered>
-              <Text>My Luuu</Text>
-            </CardItem>
-            <CardItem bordered>
-              <Body>
-                <Text>
-                  Can Nang
-                </Text>
-                <Text>
-                  23
-                </Text>
-                <Text> Update: 9/5/2018 </Text>
-              </Body>
-            </CardItem>
-            <CardItem bordered>
-              <Body>
-              <Text>
-                  Tình trạng sức khoẻ
-                </Text>
-                <Text>
-                  An Ngu Tot
-                </Text>
-                <Text> Update: 8/5/2018 </Text>
-              </Body>
-            </CardItem>
-            <CardItem footer bordered>
-              <Text>GeekyAnts</Text>
-            </CardItem>
-          </Card>
+            <View>
+            <CardThuCung petname = "LucKy" cannang = "23 kg" timeupdatecannang = "9/6/2018" tinhtrang = "tốt, ăn ngủ như heo" timeupdatetinhtrang = "9/6/2018"/>
+            <CardThuCung petname = "Misu" cannang = "15 kg" timeupdatecannang = "8/5/2018" tinhtrang = "bị số cao, không ăn" timeupdatetinhtrang = "8/5/2018"/>
+          </View>
         )
     }
 
@@ -144,60 +125,12 @@ class ProfileTab extends Component {
         }
         else if (this.state.activeIndex == 1) {
             return (
-                <View>
-                    <CardComponent names = "Anh Dũng" dates = "Jan 25 2018" times = "vừa xong" imageSource="1" likes="101" comments="123" newnamecomment = "Mmimi" newcomment = "ahihi. Đồ chó"/>
-                    <CardComponent names = "Anh Dũng" dates = "Jan 25 2018" times = "1 phút trước" imageSource="2" likes="101" comments="123" newnamecomment = "Keu Mi" newcomment = "ahihi. Đồ heo"/>
-                    <CardComponent names = "Anh Dũng" dates = "Jan 25 2018" times = "5 ngày trước" imageSource="3" likes="151" comments="523" newnamecomment = "Nan Ni" newcomment = "ahihi. Đồ lợn"/>
-                </View>
+                this.renderSectionTwo()
             )
         }
         else if (this.state.activeIndex == 3) {
             return (
-                <View>
-                <Card>
-                <CardItem header bordered>
-                  <Text>My Luuu</Text>
-                </CardItem>
-                <CardItem bordered>
-                  <Body>
-                    <Text>
-                      Cân nặng: 23 kg
-                    </Text>
-                    <Text> Update: 9/5/2018 </Text>
-                  </Body>
-                </CardItem>
-                <CardItem bordered>
-                  <Body>
-                  <Text>
-                      Tình trạng sức khoẻ: An Ngu Tot
-                    </Text>
-                    <Text> Update: 8/5/2018 </Text>
-                  </Body>
-                </CardItem>
-              </Card>
-              
-              <Card>
-                <CardItem header bordered>
-                  <Text>Anchi</Text>
-                </CardItem>
-                <CardItem bordered>
-                  <Body>
-                    <Text>
-                      Cân nặng: 13 kg
-                    </Text>
-                    <Text> Update: 10/5/2018 </Text>
-                  </Body>
-                </CardItem>
-                <CardItem bordered>
-                  <Body>
-                  <Text>
-                      Tình trạng sức khoẻ: Ăn nhiều mới bị ốm
-                    </Text>
-                    <Text> Update: 7/5/2018 </Text>
-                  </Body>
-                </CardItem>
-              </Card>
-              </View>
+                this.renderSectionFort()
             )
         }
     }
@@ -206,7 +139,7 @@ class ProfileTab extends Component {
         this.props.navigation.navigate('EditsProfile');
       };
       _showSettings = () => {
-        this.props.navigation.navigate('SettingProfile');
+        this.props.navigation.navigate('ProfilePets');
       };
 
     componentDidMount() {
